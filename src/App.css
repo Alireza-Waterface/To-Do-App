@@ -68,6 +68,15 @@ main {
 
 .title_switch {
 	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.dark-mode-switch .switch-icons {
+	font-size: 2rem;
+	color: var(--accent);
+	cursor: pointer;
 }
 
 .title {
@@ -133,8 +142,17 @@ main {
 	transition: all .2s ease-in-out;
 }
 
+.todo-content .title-checkbox {
+	margin-right: 0.5rem;
+}
+
 .task-title {
 	cursor: pointer;
+	overflow-x: auto;
+	margin-right: 1rem;
+	user-select: none;
+	text-align: left;
+	width: 100%;
 }
 
 .completed {
@@ -256,6 +274,15 @@ main {
 	border: none;
 	outline: none;
 	transition: all .2s ease-in-out;
+	width: 100%;
+}
+
+
+
+.todo-notes .title {
+	font-size: 1rem;
+	word-break: break-all;
+	padding: 1rem 0;
 }
 
 .notes-textarea {
@@ -267,7 +294,7 @@ main {
 	outline: none;
 	color: var(--text-primary);
 	border: 1px dotted var(--accent);
-	margin-bottom: 1rem;
+	margin: 1rem 0;
 	resize: vertical;
 	min-height: 2.5rem;
 	padding: 8px;
@@ -286,72 +313,6 @@ main {
 	cursor: pointer;
 	font-weight: 500;
 	background-color: var(--accent);
-}
-
-.dark-mode-switch {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	float: inline-end;
-}
-
-.switch-icons {
-	font-size: 28px;
-	color: var(--accent);
-	transition: all .2s ease-in-out;
-}
-
-.switch {
-	position: relative;
-	display: inline-block;
-	width: 60px;
-	height: 34px;
-}
-
-.switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-
-.slider {
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: var(--accent);
-	border-radius: 34px;
-	transition: all .2s ease-in-out;
-}
-
-.slider:before {
-	position: absolute;
-	content: '';
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
-	background-color: var(--background);
-	border-radius: 50%;
-	transition: all .2s ease-in-out;
-}
-
-input:checked + .slider {
-	background-color: var(--accent);
-}
-
-input:checked + .slider:before {
-	transform: translateX(26px);
-}
-
-.slider.round {
-	border-radius: 34px;
-}
-
-.slider.round:before {
-	border-radius: 50%;
 }
 
 .d-flex {
