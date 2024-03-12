@@ -115,12 +115,19 @@ const TodoWrapper = (props) => {
 				<h1 className='title'>To-Do List</h1>
 
 				<div className='dark-mode-switch'>
-					<FontAwesomeIcon icon={faMoon} className='switch-icons' />
-					<label className='switch'>
-					<input type='checkbox' />
-					<span className='slider round' onClick={props.switchTheme}></span>
-					</label>
-					<FontAwesomeIcon icon={faSun} className='switch-icons' />
+					{ props.theme === 'dark' ?
+						<FontAwesomeIcon
+							icon={faMoon}
+							onClick={props.switchTheme}
+							className='switch-icons'
+						/>
+						:
+						<FontAwesomeIcon
+							icon={faSun}
+							onClick={props.switchTheme}
+							className='switch-icons'
+						/>
+					}
 				</div>
 			</div>
 

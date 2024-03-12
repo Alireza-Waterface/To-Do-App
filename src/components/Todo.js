@@ -32,12 +32,18 @@ const Todo = (props) => {
 	return (
 		<div className='todo'>
 			<div className="todo-content">
-				<p
+				<input
+					type='checkbox'
+					className='title-checkbox'
+					id={`title-${props.task.id}`}
+					onChange={() => props.toggleComplete(props.task.id)}
+				/>
+				<label
+					htmlFor={`title-${props.task.id}`}
 					className={props.task.completed ? 'task-title completed' : 'task-title'}
-					onClick={() => props.toggleComplete(props.task.id)}
 				>
-					{props.task.task}
-				</p>
+					{props.task.task.length <= 33 ? props.task.task : (props.task.task.slice(0, 33) + '...')}
+				</label>
 
 				<div className='icons'>
 					<select value={props.task.priority} onChange={handlePriorityChange} className='task-priority-options'>
@@ -78,6 +84,7 @@ const Todo = (props) => {
 
 			{showNotes && (
 				<div className='todo-notes'>
+					{ props.task.task.length > 33 && <p className='title'>{props.task.task}</p>}
 					{isEditingDescription ? (
 						<>
 							<textarea
