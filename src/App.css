@@ -22,8 +22,14 @@
 * {
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	font-family: var(--font-family);
+}
+
+*::-moz-selection {
+	background-color: var(--accent);
+	color: var(--text-white);
 }
 
 *::selection {
@@ -42,12 +48,16 @@ body {
 	height: 100%;
 	min-height: 100vh;
 	padding: 2%;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
 main {
 	height: 100%;
 	background-color: var(--background);
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
@@ -56,11 +66,20 @@ main {
 	min-width: 300px;
 	max-width: 600px;
 	background-color: var(--wrapper-bg);
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 	border-radius: 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	margin: 0 auto;
 	padding: 2rem 1rem;
 	gap: 1rem;
@@ -68,9 +87,15 @@ main {
 
 .title_switch {
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .dark-mode-switch .switch-icons {
@@ -81,6 +106,8 @@ main {
 
 .title {
 	color: var(--text-primary);
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 	font-size: 2.5rem;
 	display: inline;
@@ -88,12 +115,16 @@ main {
 
 .todo-form {
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	gap: 6px;
 }
 
 .task-input {
-	flex: 1;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
 	padding: 8px;
 	font-size: 20px;
 	background-color: var(--background);
@@ -101,12 +132,44 @@ main {
 	outline: none;
 	border-radius: 4px;
 	color: var(--text-primary);
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.task-input::-webkit-input-placeholder {
+	color: var(--text-primary);
+	opacity: 0.8;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.task-input::-moz-placeholder {
+	color: var(--text-primary);
+	opacity: 0.8;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.task-input:-ms-input-placeholder {
+	color: var(--text-primary);
+	opacity: 0.8;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.task-input::-ms-input-placeholder {
+	color: var(--text-primary);
+	opacity: 0.8;
+	-ms-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
 .task-input::placeholder {
 	color: var(--text-primary);
 	opacity: 0.8;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
@@ -133,12 +196,20 @@ main {
 	width: 100%;
 	border-radius: 10px 10px 0 0;
 	border-bottom: 1px dotted var(--accent);
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	font-size: 16px;
 	color: var(--text-primary);
 	font-weight: 500;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
@@ -162,7 +233,9 @@ main {
 	left: 0;
 	color: #8E05C2;
 	font-size: large;
-	transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	    -ms-transform: rotate(-5deg);
+	        transform: rotate(-5deg);
 	pointer-events: none;
 }
 
@@ -175,7 +248,10 @@ main {
 	cursor: pointer;
 	overflow-x: auto;
 	margin-right: 1rem;
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	width: 100%;
 }
 
@@ -186,8 +262,12 @@ main {
 }
 
 .icons {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	gap: 10px;
 }
 
@@ -196,17 +276,23 @@ main {
 	cursor: pointer;
 	color: var(--accent);
 	font-size: 18px;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
 .task-input-editing {
-	flex: 1;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
 	padding: 8px;
 	font-size: 16px;
 	background-color: var(--background);
 	border: 1px solid var(--accent);
 	outline: none;
 	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 	color: var(--text-primary);
 }
@@ -225,6 +311,8 @@ main {
 
 .sort-options,
 .filter-options {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	margin: 0 auto;
 	padding: 10px;
@@ -235,10 +323,14 @@ main {
 	color: var(--text-primary);
 	background-color: var(--secondary-bg);
 	cursor: pointer;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
 .task-priority-options {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	margin: 0 auto;
 	padding: 6px;
@@ -249,15 +341,24 @@ main {
 	color: var(--text-primary);
 	background-color: var(--background);
 	cursor: pointer;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
 .filters {
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 	gap: 1rem;
 }
 
@@ -265,6 +366,8 @@ main {
 	color: var(--text-primary);
 	font-size: 20px;
 	margin-right: 1rem;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
@@ -272,6 +375,8 @@ main {
 	color: var(--text-primary);
 	font-size: 20px;
 	margin-right: 1rem;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
@@ -279,13 +384,21 @@ main {
 	padding: 6px 4px 4px 4px;
 	border: none;
 	outline: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	border-radius: 4px;
 	cursor: pointer;
 	color: var(--text-primary);
 	background-color: var(--background);
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
 
@@ -297,6 +410,8 @@ main {
 	color: var(--text-primary);
 	border: none;
 	outline: none;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 	width: 100%;
 }
@@ -323,7 +438,11 @@ main {
 	min-height: 2.5rem;
 	padding: 8px;
 	border-radius: 4px;
+	-webkit-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
 	transition: color .2s ease-in-out;
+	-webkit-transition: background-color .2s ease-in-out;
+	-o-transition: background-color .2s ease-in-out;
 	transition: background-color .2s ease-in-out;
 }
 
@@ -340,9 +459,13 @@ main {
 }
 
 .d-flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
 .align-center {
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
