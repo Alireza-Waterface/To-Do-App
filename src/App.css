@@ -146,12 +146,36 @@ main {
 	margin-right: 0.5rem;
 }
 
+.todo-content label {
+	position: relative;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	border: 3px solid #8E05C2;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+
+.todo-content label .check-icon {
+	position: absolute;
+	top: -6px;
+	left: 0;
+	color: #8E05C2;
+	font-size: large;
+	transform: rotate(-5deg);
+	pointer-events: none;
+}
+
+.todo-content label input {
+	opacity: 0;
+	pointer-events: none;
+}
+
 .task-title {
 	cursor: pointer;
 	overflow-x: auto;
 	margin-right: 1rem;
 	user-select: none;
-	text-align: left;
 	width: 100%;
 }
 

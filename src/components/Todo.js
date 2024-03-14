@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPenToSquare, faTrash, faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons';
+import {faPenToSquare, faTrash, faAngleDown, faAngleUp, faCheck} from '@fortawesome/free-solid-svg-icons';
 
 
 const Todo = (props) => {
@@ -32,18 +32,28 @@ const Todo = (props) => {
 	return (
 		<div className='todo'>
 			<div className="todo-content">
-				<input
-					type='checkbox'
-					className='title-checkbox'
-					id={`title-${props.task.id}`}
-					onChange={() => props.toggleComplete(props.task.id)}
-				/>
-				<label
-					htmlFor={`title-${props.task.id}`}
-					className={props.task.completed ? 'task-title completed' : 'task-title'}
-				>
-					{props.task.task.length <= 33 ? props.task.task : (props.task.task.slice(0, 33) + '...')}
+				<label>
+					<input
+						type='checkbox'
+						className='title-checkbox'
+						checked={props.task.completed}
+						id={`title-${props.task.id}`}
+						onChange={() => props.toggleComplete(props.task.id)}
+					/>
+					<FontAwesomeIcon
+						icon={faCheck}
+						className='check-icon'
+						style={{
+							display: `${props.task.completed ? 'unset' : 'none'}`
+						}}
+					/>
 				</label>
+				<p
+					className={props.task.completed ? 'task-title completed' : 'task-title'}
+					onClick={() => props.toggleComplete(props.task.id)}
+				>
+					{props.task.task.length <= 25 ? props.task.task : (props.task.task.slice(0, 25) + '...')}
+				</p>
 
 				<div className='icons'>
 					<select value={props.task.priority} onChange={handlePriorityChange} className='task-priority-options'>
@@ -84,7 +94,7 @@ const Todo = (props) => {
 
 			{showNotes && (
 				<div className='todo-notes'>
-					{ props.task.task.length > 33 && <p className='title'>{props.task.task}</p>}
+					{ props.task.task.length > 25 && <p className='title'>{props.task.task}</p>}
 					{isEditingDescription ? (
 						<>
 							<textarea
