@@ -14,7 +14,7 @@ const App = () => {
 	return (
 		<div className='app' data-theme={theme}>
 			<main>
-				<TodoWrapper switchTheme={switchTheme} />
+				<TodoWrapper switchTheme={switchTheme} theme={theme} />
 			</main>
 		</div>
 	);
